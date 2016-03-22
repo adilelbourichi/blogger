@@ -1,0 +1,29 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+
+    encoders:
+        UserBundle\Entity\User:
+           algorithm: bcrypt
+
+    providers:
+        our_db_provider:
+           entity:
+              class: UserBundle:User
+              property: username
+
+    firewalls:
+        main:
+            anonymous: ~
+            form_login:
+               login_path: login
+               check_path: login
+            logout:
+               path: logout
+               target: homepage
+            provider:
+               our_db_provider
+
+

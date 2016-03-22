@@ -1,0 +1,24 @@
+login_register:
+    resource: "@LoginRegisterBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+blog_blog:
+    resource: "@BlogBundle/Controller/BlogController.php"
+    type:     annotation
+
+user_user:
+    resource: "@UserBundle/Controller/UserController.php"
+    type:     annotation
+
+blog:
+    resource: "@BlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
